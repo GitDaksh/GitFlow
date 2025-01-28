@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/dakshpushpad/Documents/GitHub/GitFlow/src/app/dashboard/page.tsx"],"sourcesContent":["'use client'\n\nimport { useUser } from '@clerk/nextjs';\nimport React from 'react'\n\nconst DashboardPage = () => {\n    const { user } = useUser();\n\n  return (\n    <div>{user?.firstName}</div>\n  )\n}\n\nexport default DashboardPage"],"names":[],"mappings":";;;;AAEA;AAFA;;;AAKA,MAAM,gBAAgB;IAClB,MAAM,EAAE,IAAI,EAAE,GAAG,CAAA,GAAA,4JAAA,CAAA,UAAO,AAAD;IAEzB,qBACE,8OAAC;kBAAK,MAAM;;;;;;AAEhB;uCAEe"}},
+    {"offset": {"line": 26, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
