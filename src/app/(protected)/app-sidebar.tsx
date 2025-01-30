@@ -1,8 +1,10 @@
 'use client'
 
-import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@/components/ui/sidebar"
+import { Button } from "@/components/ui/button"
+import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, useSidebar } from "@/components/ui/sidebar"
 import { cn } from "@/lib/utils"
-import { Bot, CreditCard, LayoutDashboard, Presentation } from "lucide-react"
+import { Bot, CreditCard, LayoutDashboard, Plus, Presentation } from "lucide-react"
+import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
@@ -29,12 +31,32 @@ const items = [
     },
 ]
 
+const projects = [
+    {
+        name: 'project1'
+    },
+    {
+        name: 'project2'
+    },
+    {
+        name: 'project3'
+    },
+]
+
 export function AppSidebar() {
     const pathName = usePathname();
+    const {open} = useSidebar();
     return (
         <Sidebar collapsible="icon" variant="floating">
             <SidebarHeader>
-                Logo
+                <div className="flex items-center gap-2">
+                    <Image src = '/logo.jpeg' alt = 'logo' width = {60} height = {30}/>
+                    {open && (
+                        <h1 className="text-xl font-bold text-primary/80">
+                            GitFlow
+                        </h1>
+                    )}
+                </div>
             </SidebarHeader>
 
             <SidebarContent>
@@ -47,6 +69,7 @@ export function AppSidebar() {
                                 <SidebarMenuItem key = {item.title}>
                                     <SidebarMenuButton asChild>
                                         <Link href = {item.url} className={cn({
+                                            
                                             '!bg-primary !text-white': pathName === item.url
                                         }, 'list-none')}>
                                             <item.icon />
@@ -56,6 +79,46 @@ export function AppSidebar() {
                                 </SidebarMenuItem>
                             )
                         })}
+                        </SidebarMenu>
+                    </SidebarGroupContent>
+                </SidebarGroup>
+
+                <SidebarGroup>
+                    <SidebarGroupLabel>
+                        Your Projects
+                    </SidebarGroupLabel>
+                    <SidebarGroupContent>
+                        <SidebarMenu>
+                            {projects.map(project => {
+                                return (
+                                    <SidebarMenuItem key = {project.name}>
+                                        <SidebarMenuButton asChild>
+                                            <div>
+                                                <div className={cn(
+                                                    'rounded-sm border size-6 flex item-center justify-center text-sm bg.white text-primary',
+                                                    {
+                                                        'bg-primary text-white': true
+                                                    }
+                                                )}>
+                                                    {project.name[0]}
+                                                </div>
+                                                <span>{project.name}</span>
+                                            </div>
+                                        </SidebarMenuButton>
+                                    </SidebarMenuItem>
+                                )
+                            })}
+                            <div className="h-2"></div>
+                            {open && (
+                                <SidebarMenuItem>
+                                    <Link href = '/create'>
+                                        <Button variant={"outline"} className="w-fit">
+                                            <Plus />
+                                            Create Project
+                                        </Button>
+                                    </Link>
+                                </SidebarMenuItem>
+                            )}
                         </SidebarMenu>
                     </SidebarGroupContent>
                 </SidebarGroup>
