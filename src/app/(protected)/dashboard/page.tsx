@@ -2,15 +2,16 @@
 
 import { useUser } from '@clerk/nextjs';
 import React from 'react'
-import CreatePage from '../ create/page';
+import CreatePage from '../create/page';
+import useProject from '@/hooks/use-project';
 
 
 const DashboardPage = () => {
-    const { user } = useUser();
+    const { project } = useProject();
 
   return (
-    <div className='flex items-center justify-center h-full'>
-      <CreatePage />
+    <div>
+      <h1>{project?.name}</h1>
     </div>
   )
 }
