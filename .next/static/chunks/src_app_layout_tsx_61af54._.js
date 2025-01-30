@@ -12,9 +12,9 @@
     "static/chunks/node_modules_@clerk_shared_dist_acb651._.js",
     "static/chunks/node_modules_swr_dist_d00611._.js",
     "static/chunks/node_modules_@clerk_clerk-react_dist_47313b._.js",
-    "static/chunks/node_modules_c0d5d4._.js",
+    "static/chunks/node_modules_8032e5._.js",
     "static/chunks/src_073cb3._.js",
-    "static/chunks/node_modules_@clerk_nextjs_dist_esm_app-router_a4b863._.js"
+    "static/chunks/node_modules_@clerk_nextjs_dist_esm_app-router_0f148e._.js"
   ],
   "source": "dynamic"
 });

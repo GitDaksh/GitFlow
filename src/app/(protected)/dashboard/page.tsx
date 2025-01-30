@@ -2,14 +2,15 @@
 
 import { useUser } from '@clerk/nextjs';
 import React from 'react'
+import CreatePage from '../ create/page';
+
 
 const DashboardPage = () => {
     const { user } = useUser();
 
   return (
-    <div>
-      <div>{user?.firstName}</div>
-      <div>{user?.lastName}</div>
+    <div className='flex items-center justify-center h-full'>
+      <CreatePage />
     </div>
   )
 }
