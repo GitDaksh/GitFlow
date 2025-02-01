@@ -1,6 +1,4 @@
 {
-  "/page": "app/page.js",
   "/(protected)/dashboard/page": "app/(protected)/dashboard/page.js",
-  "/api/trpc/[trpc]/route": "app/api/trpc/[trpc]/route.js",
-  "/(protected)/create/page": "app/(protected)/create/page.js"
+  "/api/trpc/[trpc]/route": "app/api/trpc/[trpc]/route.js"
 }
