@@ -1,4 +1,4 @@
-# GitFlow - AI-Powered Git Commit Summarizer
+# GitFlow - AI-Powered GitHub Web App
 
 <div align="center">
 
